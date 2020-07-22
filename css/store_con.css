@@ -1,0 +1,261 @@
+body{
+	padding: 0;margin: 0;
+}
+.header_bt{
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+}
+.store_header{
+	width: 100%;
+	position: relative;
+	height: 50px;
+	background: linear-gradient(to top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 200%);
+	top: 0;
+	left: 0;
+	position: fixed;
+	/* border-bottom: 1px solid rgba(0,0,0,0); */
+	transition: 0.5s all;
+}
+.store_header img{
+	width: 30px;
+	overflow: hidden;
+	display: inline-block;
+	position: relative;/*相对定位*/
+	left: -30px;/*宽度多少就填多少*/
+	border-right: 30px solid transparent;/*transparent表示完全透明黑色 兼容浏览器-修复某些bug*//*宽度多少就填多少px*/
+	-webkit-filter: drop-shadow(30px 0);/*宽度多少就填多少*/
+	filter: drop-shadow(30px 0 #fff);/*投影出一个颜色叠加的图像，可用于png图标变色*/
+}
+.store_header.top{
+	background: #FFFFFF;
+	border-bottom: 1px solid #eee;
+}
+.store_header.top img{
+	border-right: 30px solid transparent;/*transparent表示完全透明黑色 兼容浏览器-修复某些bug*//*宽度多少就填多少px*/
+	-webkit-filter: drop-shadow(30px 0);/*宽度多少就填多少*/
+	filter: drop-shadow(30px 0 #000);/*投影出一个颜色叠加的图像，可用于png图标变色*/
+}
+.quit{
+	display: inline-block;
+	width: 30px;
+	position: absolute;
+	left: 20px;
+	top: 0;
+	height: 40px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+.quit img{
+	width: 30px;
+	overflow: hidden;
+	display: inline-block;
+	position: relative;/*相对定位*/
+	left: -30px;/*宽度多少就填多少*/
+	border-right: 30px solid transparent;/*transparent表示完全透明黑色 兼容浏览器-修复某些bug*//*宽度多少就填多少px*/
+	-webkit-filter: drop-shadow(30px 0);/*宽度多少就填多少*/
+	filter: drop-shadow(30px 0 #fff);/*投影出一个颜色叠加的图像，可用于png图标变色*/
+}
+.header_right{
+	position: absolute;
+	top: 0;
+	right: 20px;
+	display: inline-block;
+	width: 30px;
+	height: 40px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+.banner img{
+	width: 100%;
+	display: inline-block;
+	max-height: 300px;
+}
+.con{
+	margin-top: -50px;
+	height: calc(100vh + 68px);
+}
+.logo{
+	text-align: center;
+}
+.logo img{
+	width: 100px;
+	display: inline-block;
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+.logo_text{
+	padding-bottom: 10px;
+}
+.logo_text p{
+	text-align: center;
+	font-size: 24px;
+	padding-top: 1px;
+}
+.logo_text p span{
+	margin: 0 5px;
+	font-size: 12px;
+	color: #666666;
+}
+.sss_left{
+	float: left;
+	width: 80px;
+	height: calc(100vh - 100px);
+	background-color: #eee;
+	overflow-y: scroll;
+}
+.sss_left li{
+	cursor: pointer;
+	padding: 10px;
+	font-size: 12px;
+	color: #666666;
+}
+.sss_right{
+	width: calc(100% - 90px);
+	overflow-y: scroll;
+	height: calc(100vh - 100px);
+	float: right;
+}
+.sss_right li{
+	height: 100px;
+	margin-bottom: 20px;
+	position: relative;
+	padding-right: 10px;
+}
+.sss_right .img{
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+	background-position: center;
+	float: left;
+	margin-right: 10px;
+	/* background-image: url(../img/2rtaocan.jpg); */
+}
+.sss_right li p{
+	font-size: 16px;
+	color: #000;
+}
+.sss_right li p span{
+	font-size: 12px;
+	color: #aaa;
+}
+.sss_right li p.jiage{
+	color: red;
+	position: relative;
+	bottom: -35px;
+}
+.sss_right li p.jiage span{
+	color: red;
+}
+.sss_right li .suliang{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: 80px;
+	height: 25px;
+	/* background-color: #007AFF; */
+	text-align: right;
+}
+.subt{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+	line-height: 18px;
+	font-size: 20px;
+	border: 1px solid #007AFF;
+	border-radius: 30px;
+}
+.subt.subtJ{
+	background-color: #007AFF;
+	color: #fff;
+}
+.sul{
+	font-size: 16px;
+	line-height: 20px;
+}
+.ht_s{
+	font-size: 14px;
+	margin-bottom: 20px;
+	color: #666666;
+}
+.btom{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background-color: #333;
+	padding: 5px 10px;
+	padding-left: 80px;
+	z-index: 99;
+}
+.cart{
+	float: left;
+	overflow: hidden;
+	width: 30px;
+	display: inline-block;
+	margin-top: 5px;
+}
+.cart img{
+	width: 30px;
+	overflow: hidden;
+	display: inline-block;
+	position: relative;/*相对定位*/
+	left: -30px;/*宽度多少就填多少*/
+	border-right: 30px solid transparent;/*transparent表示完全透明黑色 兼容浏览器-修复某些bug*//*宽度多少就填多少px*/
+	-webkit-filter: drop-shadow(30px 0);/*宽度多少就填多少*/
+	filter: drop-shadow(30px 0 #fff);/*投影出一个颜色叠加的图像，可用于png图标变色*/
+}
+.ssum{
+	display: inline-block;
+	float: left;
+}
+.ssum p{
+	color: #fff;
+	font-size: 20px;
+	margin-left: 10px;
+}
+.ssum p.ssuu{
+	font-size: 8px;
+	margin-top: -5px;
+}
+.jie{
+	position: fixed;
+	width: 50px;
+	height: 30px;
+	bottom: 0;
+	right: 0;
+	padding: 10px 20px;
+	background-color: #00c378;
+	z-index: 999;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+}
+.jie.hui{
+	background-color: #AAAAAA;
+}
+p.suu{
+	width: 100px;
+	font-size: 10px;
+	position: fixed;
+	color: #eee;
+	bottom: 35px;
+	left: 270px;
+	z-index: 9999;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>购物</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/all.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="css/index.css">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header class="index_header">
+			<input type="text" placeholder="请搜索商品">
+			<img src="img/search.png">
+		</header>
+
+		<div class="banner">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><a href="#1"><img src="img/borderlands_tiny_tina.jpg"></a></div>
+					<div class="swiper-slide"><a href="#2"><img src="img/children_game_concept01.jpg"></a></div>
+					<div class="swiper-slide"><a href="#3"><img src="img/children_game_concept02.jpg"></a></div>
+					<div class="swiper-slide"><a href="#4"><img src="img/lang_yie_ar_kung_fu.jpg"></a></div>
+					<div class="swiper-slide"><a href="#5"><img src="img/redhead.jpg"></a></div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<!-- Add Arrows -->
+				<!-- <div class="swiper-button-next"></div> -->
+				<!-- <div class="swiper-button-prev"></div> -->
+			</div>
+		</div>
+
+		<div class="nav_inc">
+			<div class="nav-1">
+				<a href="#1">
+					<div class="nav-1s">
+						<img src="img/领券.png">
+						<p>领券中心</p>
+					</div>
+				</a>
+
+				<a href="#1">
+					<div class="nav-1s">
+						<img src="img/直播.png">
+						<p>直播</p>
+					</div>
+				</a>
+
+				<a href="#1">
+					<div class="nav-1s">
+						<img src="img/促销.png">
+						<p>促销商品</p>
+					</div>
+				</a>
+
+				<a href="#1">
+					<div class="nav-1s">
+						<img src="img/会员.png">
+						<p>会员中心</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="nav-1">
+				<a href="#1">
+					<div class="nav-1s">
+						<img src="img/超市.png">
+						<p>超市到家</p>
+					</div>
+				</a>
+
+				<a href="#1">
+					<div class="nav-1s">
+						<img src="img/家电.png">
+						<p>家电</p>
+					</div>
+				</a>
+
+				<a href="#1">
+					<div class="nav-1s">
+						<img src="img/生鲜.png">
+						<p>生鲜</p>
+					</div>
+				</a>
+
+				<a href="#1">
+					<div class="nav-1s">
+						<img src="img/美妆.png">
+						<p>美妆</p>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="banner_hot">
+			<a href="#hot"><img src="img/banner_hot.png"></a>
+		</div>
+
+		<div class="store_list" id="store_list_vue">
+			
+			<div class="store_nav">
+				<ul>
+					<li v-for="(item,index) in store_nav" :class="{nav_class:item.nav_class}" @click="nav_class_click(index)">{{item.name}}</li>
+				</ul>
+			</div>
+			
+			<div class="store_list_ll">
+				<ul>
+					<a href="store_con.html" v-for="(item,index) in store_list">
+						<li>
+							<div class="store_logo">
+								<img :src="item.img_url" alt="">
+							</div>
+							<div class="store_con">
+								<p>{{item.name}}</p>
+								<p><span>月售{{item.sell_num}}</span> <span class="store_con_right">{{item.distance}}</span></p>
+								<p><span>起送￥{{item.give}}</span> &nbsp;<span v-if="item.give_mani!=0">配送￥{{item.give_mani}}</span><span v-else>免费配送</span></p>
+							</div>
+						</li>
+					</a>
+				</ul>
+			</div>
+
+		</div>
+
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper-bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			const swiper = new Swiper('.swiper-container', {
+				slidesPerView: 1,
+				loop: true,
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				// navigation: {
+				//   nextEl: '.swiper-button-next',
+				//   prevEl: '.swiper-button-prev',
+				// },
+			});
+		</script>
+	</body>
+
+</html>

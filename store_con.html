@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商店页面</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/all.css" />
+		<link rel="stylesheet" type="text/css" href="css/store_con.css" />
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="store_con">
+			<header class="store_header" :class="{top:isFixed}">
+				<a href="index.html" class="quit"><img src="img/arrow_left.png"></a>
+				<p class="header_bt" v-show="isFixed">{{store_list[0].name}}</p>
+				<a href="#1" class="header_right">
+					<img src="img/search.png">
+				</a>
+			</header>
+			<div class="banner">
+				<img src="img/sshb_bg.jpg">
+			</div>
+			<div class="con">
+				<div class="logo"><img :src="store_list[0].img_url"></div>
+				<div class="logo_text">
+					<p>{{store_list[0].name}}</p>
+					<p>
+						<span>月售{{store_list[0].sell_num}}</span>
+						<span>起送￥{{store_list[0].give}}</span>
+						<span>距离{{store_list[0].distance}}</span>
+					</p>
+				</div>
+				<div class="sss_list">
+					<div class="sss_left">
+						<ul>
+							<a v-for="(item,index) in store_nn_list" :href="'#'+item.id">
+								<li>{{item.name}}</li>
+							</a>
+						</ul>
+					</div>
+					<div class="sss_right">
+						<div v-for="(item,index) in store_nn_list">
+							<p :id="item.id" class="ht_s">{{item.name}}</p>
+							<ul>
+								<li v-for="(item2,index2) in item.sss">
+									<div class="img" :style="{backgroundImage: 'url('+item2.img_url+')'}"></div>
+									<p>{{item2.name}}</p>
+									<p><span>月售{{item2.yue_num}}</span></p>
+									<p class="jiage"><span>￥</span>{{item2.num}}</p>
+									<div class="suliang">
+										<span class="subt" v-show="item2.sum!=0" @click="item2.sum--;subtJ();">-</span>
+										<span class="sul" v-show="item2.sum!=0">{{item2.sum}}</span>
+										<span class="subt subtJ" @click="item2.sum++;subtJ();">+</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="bttttt" style="height: 50px;"></div>
+			<div class="btom">
+				<div class="cart">
+					<img src="img/cart.png" >
+				</div>
+				<div class="ssum">
+					<p>￥{{zhon_num}}</p>
+					<p class="ssuu"><span>另需配送费￥{{store_list[0].give_mani}}</span></p>
+					<p class="suu" v-show="zhon_num<store_list[0].give"><span>还差￥{{20-zhon_num}}起送</span></p>
+				</div>
+				<div class="jie" :class="{hui:zhon_num<store_list[0].give}" @click="jie">
+					结账
+				</div>
+			</div>
+		</div>
+		<script src="js/store_con.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
